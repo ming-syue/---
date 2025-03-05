@@ -1,0 +1,7 @@
+value1 = getField("自由現金流量");   //自資料庫call最新1季自由現金流量
+value2 = getField("自由現金流量")[1]; //自資料庫call前1季自由現金流量
+value3 = getField("自由現金流量")[2];  //自資料庫call前2季自由現金流量
+
+if value2 < value1    //前1季自由現金流量小於最新1季自由現金流量
+and value3 < value2   //前2季自由現金流量小於前1季自由現金流量
+then ret=1;
