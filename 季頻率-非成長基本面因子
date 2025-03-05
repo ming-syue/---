@@ -1,0 +1,8 @@
+input:_seasons(4);  //令參數為4
+
+Value1 = GetField("營業利益率")*1;  //自資料庫call營業利益率後assign
+Value2 = Average(GetField("營業利益率"),_seasons)*1;  //自資料庫call近4季營業利益率並取平均值後assign
+
+if Value1 > Value2   //表最近1季營業利益率大於近4季營業利益率平均值
+and trueAll(GetField("每股營業利益(元)") > 0, _seasons)  // trueAll代表()內全部布林值為真，即近四季美每股營業利益都大於0
+then ret=1; 
