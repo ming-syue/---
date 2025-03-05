@@ -1,0 +1,6 @@
+input:_p1(0);    //令參數為0
+if _p1 = 0 then begin  //當參數值為0時執行的敘述
+  if GetField("來自營運之現金流量") > GetField("來自營運之現金流量")[4] then ret=1;//最近1期來自營運之現金流量跟去年同期比較
+end else begin        //當參數值不為0時執行的敘述
+  if (GetField("來自營運之現金流量") - GetField("來自營運之現金流量")[4])*1 >= _p1 then ret=1;//最近1期淨利率跟去年同期比較且須大於參數
+end;
