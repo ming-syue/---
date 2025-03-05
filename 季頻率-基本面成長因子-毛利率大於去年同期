@@ -1,0 +1,6 @@
+input:_p1(0);  //令參數為0
+if _p1 = 0 then begin  //當參數值為0時執行的敘述
+  if GetField("營業毛利率") > GetField("營業毛利率")[4] then ret=1; //最近1期毛利跟去年同期比較
+end else begin        //當參數值不為0時執行的敘述
+  if (GetField("營業毛利率") - GetField("營業毛利率")[4])*1 >= _p1 then ret=1; //最近1期毛利跟去年同期比較且須大於參數
+end;
