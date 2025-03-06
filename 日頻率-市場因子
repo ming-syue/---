@@ -10,7 +10,7 @@ Value3 = GetField("分公司交易家數");  //自資料庫call分公司交易�
 value5 = GetField("成交量") - Average(GetField("成交量")[1], _period)* _times; //自資料庫call成交量並減去20均量的2.5倍後assign
 value6 = 1 * value5;
 
-if Value1 < _price    //收盤價大於100元
+if Value1 < _price    //收盤價小於100元
 and Value2 >= _vol    //成交量大於100張
 and Value3< _tradenum //分公司交易家數小於200
 and value6 > 0        //value6大於0代表成交量大於20日均量
